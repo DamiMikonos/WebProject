@@ -15,9 +15,20 @@ DROP TABLE IF EXISTS POI;
 CREATE TABLE POI(
     id VARCHAR (50) NOT NULL,
     name VARCHAR (30) NOT NULL,
-    street VARCHAR (30),
-    number INT,
+    address VARCHAR(50) NOT NULL,
     type VARCHAR,
+    lat FLOAT,
+    lon FLOAT,
+    rating FLOAT,
+    rating_n INT,
+    current_popularity INT,
+    Monday VARCHAR (50),
+    Tuesday VARCHAR (50),
+    Wednesday VARCHAR (50),
+    Thursday VARCHAR (50),
+    Friday VARCHAR (50),
+    Saturday VARCHAR (50),
+    Sunday VARCHAR (50),
     PRIMARY KEY (id)
 );
 
