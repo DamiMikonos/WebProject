@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>C19Spread</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="dash.css">
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="logo_content">
+        <div class="logo">
+          <i class=""></i>
+          <div class="logo_name">C19Spread</div>
+        </div>
+        <i class='bx bx-menu' id="btn"></i>
+      </div>
+
+    <ul class="nav_list">
+      <li>
+        <a href="dashboard.html">
+          <i class='bx bx-user' ></i>
+          <span class="links_name">User</span>
+        </a>
+        <span class="tooltip">User</span>
+      </li>
+
+      <li>
+        <a href="settings.html">
+          <i class='bx bx-cog'></i>
+          <span class="links_name">Settings</span>
+        </a>
+        <span class="tooltip">Settings</span>
+      </li>
+    </ul>
+
+    <div class="profile_content">
+        <a href="signin.html"><i class='bx bx-log-out' id="log_out"></i></a>
+      </div>
+
+    </div>
+    </div>
+
+    <script>
+      let btnOpen = document.querySelector("#btn");
+      let sidebar = document.querySelector(".sidebar");
+
+      btnOpen.onclick = function(){
+
+        sidebar.classList.toggle("active");
+      }
+    </script>
+  </body>
+
+</html>
