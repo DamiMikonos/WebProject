@@ -43,8 +43,14 @@
         <a href="signin.html"><i class='bx bx-log-out' id="log_out"></i></a>
       </div>
 
-    </div>
-    </div>
+    <div id="map"></div> <!--Map-->
+    <!--Upload button-->
+    <div class="upload">
+      <form action="/action_page.php">
+        <input type="file" id="myFile" name="filename">
+        <input type="submit">
+      </form>      
+    </div> 
 
     <script>
       let btnOpen = document.querySelector("#btn");
@@ -54,20 +60,10 @@
 
         sidebar.classList.toggle("active");
       }
+      var map = L.map('map').setView([38.246639, 21.734573], 13); //Map Creation
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', 
+      {attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(map); //Tiles Creation
     </script>
-    <div id="map"></div>
-    <script>
-      var map = L.map('map').setView([38.246639, 21.734573], 13);
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
-    </script>
-
-    
-    <div class="upload">
-      <form action="/action_page.php">
-        <input type="file" id="myFile" name="filename">
-        <input type="submit">
-      </form>      
-    </div> 
   </body>
 
 </html>

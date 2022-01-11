@@ -623,5 +623,10 @@ color: #737373;
   vertical-align: bottom;
 }
 #map{
-  width: 600px; height: 400px; position: relative;
+  width: 1511px; 
+  height: 850px;
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: auto;
 }
