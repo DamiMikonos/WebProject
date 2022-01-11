@@ -617,3 +617,14 @@ box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 color: #737373;
   font-size: 12px;
 }
+.upload{
+  text-align: center;
+  vertical-align: bottom;
+}
+#map{
+  position: absolute; 
+  top: 0; 
+  right: 0; 
+  bottom: 0; 
+  left: 0;
+}
