@@ -624,9 +624,7 @@ color: #737373;
 }
 #map{
   width: 1511px; 
-  height: 850px;
-  margin-top: auto;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: auto;
+  height: 650px;
+  margin-left: 225px;
+  margin-top: -50px;
 }
