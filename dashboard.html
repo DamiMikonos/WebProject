@@ -8,6 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="dash.css">
+    <!--Leaflet Library-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+    <!--Leaflet Plug-In Geolocation-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.76.0/dist/L.Control.Locate.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.76.0/dist/L.Control.Locate.min.js" charset="utf-8"></script>
   </head>
   <body>
     <div class="sidebar">
@@ -39,11 +45,20 @@
 
     <div class="profile_content">
         <a href="signin.html"><i class='bx bx-log-out' id="log_out"></i></a>
-      </div>
-
     </div>
-    </div>
-
+    
+    <div></div>
+    
+    <div id="map"></div> <!--Map-->
+    <!--Upload button-->
+    <div class="upload">
+      <form action="/action_page.php">
+        <input type="file" id="myFile" name="filename">
+        <input type="submit">
+      </form>      
+    </div> 
+    <p id="GPS"></p>
+    <!--SCRIPT-->
     <script>
       let btnOpen = document.querySelector("#btn");
       let sidebar = document.querySelector(".sidebar");
@@ -52,7 +67,21 @@
 
         sidebar.classList.toggle("active");
       }
+
+      var map = L.map('map').setView([38.246639, 21.734573], 13); //Map Creation
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', 
+      {attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(map); //Tiles Creation
+      L.control.locate().addTo(map);
+
+      //GeoLocation of User
+      const x = document.getElementById("GPS");
+      function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+      } else { 
+        x.innerHTML = "Geolocation is not supported by this browser.";
+      }
+}
     </script>
   </body>
-
 </html>
