@@ -46,15 +46,19 @@
     <div class="profile_content">
         <a href="signin.html"><i class='bx bx-log-out' id="log_out"></i></a>
     </div>
-    
-    <div></div>
+
+    <!--Search Bar-->
+    <div class="search">
+      <input type="text" id="searchInput" name="search" placeholder="Search...">
+      <input type="submit">
+    </div>
     
     <div id="map"></div> <!--Map-->
     <!--Upload button-->
     <div class="upload">
       <form action="/action_page.php">
         <input type="file" id="myFile" name="filename">
-        <input type="submit">
+        <button type="submit"></button>
       </form>      
     </div> 
     <p id="GPS"></p>
@@ -76,12 +80,16 @@
       //GeoLocation of User
       const x = document.getElementById("GPS");
       function getLocation() {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-      } else { 
-        x.innerHTML = "Geolocation is not supported by this browser.";
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(showPosition);
+        }
+        else { 
+          x.innerHTML = "Geolocation is not supported by this browser.";
+        }
       }
-}
+
+      //Search in Database for searchbar
+      
     </script>
   </body>
 </html>

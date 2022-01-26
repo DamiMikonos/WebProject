@@ -619,12 +619,28 @@ color: #737373;
   font-size: 12px;
 }
 .upload{
-  text-align: center;
-  vertical-align: bottom;
+  position: fixed;
+  margin-top: 620px;
+  margin-left: 225px;
 }
 #map{
+  position: fixed;
   width: 1511px; 
   height: 650px;
   margin-left: 225px;
   margin-top: -50px;
+}
+.search{
+  position: fixed;
+  width: 130px;
+  box-sizing: border-box;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: #1d1b31;
+  margin-top: -100px;
+  margin-left: 225px;
+}
+.search:focus{
+  width: 100%;
 }
