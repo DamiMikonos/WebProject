@@ -16,7 +16,6 @@ CREATE TABLE POI(
     id VARCHAR (50) NOT NULL,
     name VARCHAR (30) NOT NULL,
     address VARCHAR(50) NOT NULL,
-    types VARCHAR (50),
     lat FLOAT,
     lng FLOAT,
     rating FLOAT,
@@ -27,6 +26,22 @@ CREATE TABLE POI(
     PRIMARY KEY (id)
 );
 
+<<<<<<< Updated upstream
+=======
+DROP TABLE IF EXISTS POI_Types;
+CREATE TABLE POI_Types(
+    poiid VARCHAR (50) NOT NULL,
+    type1 VARCHAR (10),
+    type2 VARCHAR (10),
+    type3 VARCHAR (10),
+    type4 VARCHAR (10),
+    type5 VARCHAR (10),
+    type6 VARCHAR (10),
+    type7 VARCHAR (10),
+    FOREIGN KEY (poiid) REFERENCES POI(id)
+);
+
+>>>>>>> Stashed changes
 DROP TABLE IF EXISTS ACTIVITY;
 CREATE TABLE ACTIVITY(
 		poiid VARCHAR (50) NOT NULL,
@@ -58,6 +73,40 @@ CREATE TABLE ACTIVITY(
 		FOREIGN KEY (poiid) REFERENCES POI(id)
 	);
 
+<<<<<<< Updated upstream
+=======
+DROP TABLE IF EXISTS POI_WaitTime;
+CREATE TABLE POI_WaitTime(
+    poiid VARCHAR (50) NOT NULL,
+    day VARCHAR (10) NOT NULL,
+	hour1 INT NOT NULL,
+	hour2 INT NOT NULL,
+	hour3 INT NOT NULL,
+	hour4 INT NOT NULL,
+	hour5 INT NOT NULL,
+	hour6 INT NOT NULL,
+	hour7 INT NOT NULL,
+	hour8 INT NOT NULL,
+	hour9 INT NOT NULL,
+	hour10 INT NOT NULL,
+	hour11 INT NOT NULL,
+	hour12 INT NOT NULL,
+	hour13 INT NOT NULL,
+	hour14 INT NOT NULL,
+	hour15 INT NOT NULL,
+	hour16 INT NOT NULL,
+	hour17 INT NOT NULL,
+	hour18 INT NOT NULL,
+	hour19 INT NOT NULL,	
+	hour20 INT NOT NULL,
+	hour21 INT NOT NULL,
+	hour22 INT NOT NULL,
+	hour23 INT NOT NULL,
+	hour24 INT NOT NULL,
+	FOREIGN KEY (poiid) REFERENCES POI(id)
+);
+
+>>>>>>> Stashed changes
 DROP TABLE IF EXISTS Cases;
 CREATE  TABLE Cases(
     user VARCHAR (45),
